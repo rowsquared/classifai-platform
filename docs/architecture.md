@@ -12,6 +12,7 @@ optional; classifAI runs independently without taxomind.
 
 ## Diagram
 
+```text
 +-----------+        +-------------------+        +------------------------+
 | Web users | <----> | classifAI UI/API  | -----> | taxomind API (optional) |
 +-----------+        +-------------------+        +------------------------+
@@ -20,6 +21,7 @@ optional; classifAI runs independently without taxomind.
                       +---------+
                       | Postgres|
                       +---------+
+```
 
 ## Ports (dev defaults)
 

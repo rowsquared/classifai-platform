@@ -13,6 +13,7 @@ AI is optional. classifAI runs as a full labeling platform without taxomind.
 
 ## Architecture summary
 
+```text
 +-----------+        +-------------------+        +------------------------+
 | Web users | <----> | classifAI UI/API  | -----> | taxomind API (optional) |
 +-----------+        +-------------------+        +------------------------+
@@ -21,6 +22,7 @@ AI is optional. classifAI runs as a full labeling platform without taxomind.
                       +---------+
                       | Postgres|
                       +---------+
+```
 
 - classifAI is the system of record (users, projects, annotations, audits).
 - taxomind provides optional AI label suggestions over an HTTP API.
