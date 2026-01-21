@@ -1,15 +1,56 @@
 # classifai-platform
 
+<video controls playsinline muted loop>
+  <source src="docs/assets/classifai-overview.mp4" type="video/mp4">
+  Your browser does not support the video tag. Open it here:
+  docs/assets/classifai-overview.mp4
+</video>
+
+Complex classifications made easy. Open-source, AI-assisted, and user-friendly.
+Built for ISCO, ISIC, COICOP, and beyond.
+
 classifai-platform is the front door for the classifAI ecosystem: documentation,
 local development orchestration, and integration guidance for running classifAI
 with the optional taxomind AI service.
 
 AI is optional. classifAI runs as a full labeling platform without taxomind.
 
-## Repositories
+## Components
 
-- classifAI (UI + backend): https://github.com/rowsquared/classifAI
-- taxomind (AI service): https://github.com/rowsquared/taxomind
+- classifAI: labeling UI + database + workflows
+- taxomind: optional AI classification service (HTTP API)
+
+## Links
+
+- Website: https://rowsquared.com/classifai/
+- classifAI repo: https://github.com/rowsquared/classifAI
+- taxomind repo: https://github.com/rowsquared/taxomind
+
+## Why classifAI
+
+### Faster & Cheaper
+Get instant preliminary results from AI, then let your team verify and correct
+the suggestions. Time and cost drop as the model learns from corrections.
+
+![Faster & Cheaper](docs/assets/faster-cheaper.webp)
+
+### Improved Quality
+Review and correct AI suggestions to continuously improve quality. Use review and
+double-annotation workflows to create gold standards.
+
+![Improved Quality](docs/assets/improved-quality.webp)
+
+### Simple Process Management
+Track progress, assign work, and manage workflows in one place. Custom filters,
+flexible assignments, and built-in commenting keep teams aligned.
+
+![Simple Process Management](docs/assets/simple-process-management.webp)
+
+### Solid AI Integration
+AI predictions can be wrong. classifAI (via taxomind) keeps humans in control,
+so teams review every prediction and teach the model over time.
+
+![Solid AI Integration](docs/assets/solid-ai-integration.webp)
 
 ## Architecture summary
 
