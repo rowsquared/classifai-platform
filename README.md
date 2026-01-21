@@ -1,13 +1,13 @@
 # classifai-platform
 
-<video controls playsinline muted loop>
-  <source src="docs/assets/classifai-overview.mp4" type="video/mp4">
-  Your browser does not support the video tag. Open it here:
-  docs/assets/classifai-overview.mp4
-</video>
 
 Complex classifications made easy. Open-source, AI-assisted, and user-friendly.
 Built for ISCO, ISIC, COICOP, and beyond.
+
+
+[![Watch the classifAI overview video](docs/assets/solid-ai-integration.webp)](docs/assets/classifai-overview.mp4)
+
+
 
 classifai-platform is the front door for the classifAI ecosystem: documentation,
 local development orchestration, and integration guidance for running classifAI
