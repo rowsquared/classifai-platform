@@ -8,7 +8,6 @@ Built for ISCO, ISIC, COICOP, and beyond.
 [![Watch the classiflow overview video](docs/assets/solid-ai-integration.webp)](docs/assets/classiflow-overview.mp4)
 
 
-
 classiflow-platform is the front door for the classiflow ecosystem: documentation,
 local development orchestration, and integration guidance for running classiflow
 with the optional taxomind AI service.
