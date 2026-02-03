@@ -15,3 +15,4 @@ Please report security issues in the repository where the issue exists:
 
 Use GitHub Security Advisories where available. Avoid posting sensitive details
 in public issues.
+
