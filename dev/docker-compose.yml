@@ -21,7 +21,6 @@ services:
 
   db:
     image: postgres:15
-    # Local dev database for classiflow. Remove if you use an external DB.
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-classiflow}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-classiflow}
