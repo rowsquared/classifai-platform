@@ -3,6 +3,11 @@
 This repo provides a Docker Compose stack for running classifAI with optional
 AI suggestions via taxomind.
 
+> Note  
+> This project does not publish pre-built Docker images.
+> Docker Compose builds images locally from the classifAI and taxomind
+> repositories.
+
 ## Docker Compose (recommended)
 
 1. Copy the template env file:
