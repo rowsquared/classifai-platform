@@ -71,6 +71,11 @@ so teams review every prediction and teach the model over time.
 
 ## Quickstart (Docker Compose)
 
+> Note  
+> Docker images are **not published** for this project. The provided
+> `docker-compose.yml` builds images locally from source.  
+> See `docs/local-dev.md` for details.
+
 1. Clone and enter the repo:
    ```bash
    git clone https://github.com/rowsquared/classifai-platform.git
@@ -125,6 +130,21 @@ so teams review every prediction and teach the model over time.
 - `docs/local-dev.md` - local dev workflow and troubleshooting
 - `docs/deployment.md` - production patterns and scaling
 - `docs/integration.md` - classifAI to taxomind configuration
+
+## Project status and maintenance
+
+This project is published as an open-source reference implementation and
+working tool.
+
+We welcome bug reports, documentation fixes, and general feedback via GitHub
+issues. However, please note that maintenance is intentionally kept at a
+low-touch level.
+
+New feature requests, refactors, or roadmap-driven changes are not guaranteed
+to be addressed unless they align with our own priorities or ongoing work.
+
+The software is provided **as-is**, without any commitment to continuous
+maintenance, backward compatibility, or support timelines.
 
 ## Support
 
