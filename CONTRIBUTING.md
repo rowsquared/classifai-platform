@@ -1,13 +1,13 @@
 # Contributing
 
-Thanks for helping improve classifai-platform.
+Thanks for helping improve classiflow-platform.
 
 ## Scope
 
 This repo is the front door for the ecosystem: docs, local dev orchestration,
 and integration guidance. For product changes, use the component repos:
 
-- classifAI: https://github.com/rowsquared/classifAI
+- classiflow: https://github.com/rowsquared/classifAI
 - taxomind: https://github.com/rowsquared/taxomind
 
 ## How to contribute
@@ -25,6 +25,6 @@ and integration guidance. For product changes, use the component repos:
 
 ## Support routing
 
-- UI/workflows issues: classifAI repo
+- UI/workflows issues: classiflow repo
 - AI service issues: taxomind repo
-- Stack/docs issues: classifai-platform repo
+- Stack/docs issues: classiflow-platform repo

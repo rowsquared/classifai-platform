@@ -1,9 +1,7 @@
 services:
-  classifai:
+  classiflow:
     build:
-      context: ../../classifAI
-    # Optional: use a prebuilt image instead of a local build.
-    # image: your-registry/classifai:tag
+      context: ../../classiflow
     env_file:
       - ../.env
     ports:
@@ -16,8 +14,6 @@ services:
       context: ../../taxomind
     profiles:
       - ai
-    # Optional: use a prebuilt image instead of a local build.
-    # image: your-registry/taxomind:tag
     env_file:
       - ../.env
     ports:
@@ -25,11 +21,11 @@ services:
 
   db:
     image: postgres:15
-    # Local dev database for classifAI. Remove if you use an external DB.
+    # Local dev database for classiflow. Remove if you use an external DB.
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-classifai}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-classifai}
-      POSTGRES_DB: ${POSTGRES_DB:-classifai}
+      POSTGRES_USER: ${POSTGRES_USER:-classiflow}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-classiflow}
+      POSTGRES_DB: ${POSTGRES_DB:-classiflow}
     ports:
       - "5432:5432"
     volumes:

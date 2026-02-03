@@ -1,32 +1,32 @@
-# classifai-platform
+# classiflow-platform
 
 
 Complex classifications made easy. Open-source, AI-assisted, and user-friendly.
 Built for ISCO, ISIC, COICOP, and beyond.
 
 
-[![Watch the classifAI overview video](docs/assets/solid-ai-integration.webp)](docs/assets/classifai-overview.mp4)
+[![Watch the classiflow overview video](docs/assets/solid-ai-integration.webp)](docs/assets/classiflow-overview.mp4)
 
 
 
-classifai-platform is the front door for the classifAI ecosystem: documentation,
-local development orchestration, and integration guidance for running classifAI
+classiflow-platform is the front door for the classiflow ecosystem: documentation,
+local development orchestration, and integration guidance for running classiflow
 with the optional taxomind AI service.
 
-AI is optional. classifAI runs as a full labeling platform without taxomind.
+AI is optional. classiflow runs as a full labeling platform without taxomind.
 
 ## Components
 
-- classifAI: labeling UI + database + workflows
+- classiflow: labeling UI + database + workflows
 - taxomind: optional AI classification service (HTTP API)
 
 ## Links
 
-- Website: https://rowsquared.com/classifai/
-- classifAI repo: https://github.com/rowsquared/classifAI
+- Website: https://rowsquared.com/classiflow/
+- classiflow repo: https://github.com/rowsquared/classifAI
 - taxomind repo: https://github.com/rowsquared/taxomind
 
-## Why classifAI
+## Why classiflow
 
 ### Faster & Cheaper
 Get instant preliminary results from AI, then let your team verify and correct
@@ -47,7 +47,7 @@ flexible assignments, and built-in commenting keep teams aligned.
 ![Simple Process Management](docs/assets/simple-process-management.webp)
 
 ### Solid AI Integration
-AI predictions can be wrong. classifAI (via taxomind) keeps humans in control,
+AI predictions can be wrong. classiflow (via taxomind) keeps humans in control,
 so teams review every prediction and teach the model over time.
 
 ![Solid AI Integration](docs/assets/solid-ai-integration.webp)
@@ -56,7 +56,7 @@ so teams review every prediction and teach the model over time.
 
 ```text
 +-----------+        +-------------------+        +------------------------+
-| Web users | <----> | classifAI UI/API  | -----> | taxomind API (optional) |
+| Web users | <----> | classiflow UI/API  | -----> | taxomind API (optional) |
 +-----------+        +-------------------+        +------------------------+
                            |
                            v
@@ -65,9 +65,9 @@ so teams review every prediction and teach the model over time.
                       +---------+
 ```
 
-- classifAI is the system of record (users, projects, annotations, audits).
+- classiflow is the system of record (users, projects, annotations, audits).
 - taxomind provides optional AI label suggestions over an HTTP API.
-- classifAI authenticates to taxomind with a Bearer token.
+- classiflow authenticates to taxomind with a Bearer token.
 
 ## Quickstart (Docker Compose)
 
@@ -80,42 +80,42 @@ are missing, install them first.
 - Docker + Docker Compose
 - Git
 
-The compose file expects `classifai-platform`, `classifAI`, and `taxomind` to be
+The compose file expects `classiflow-platform`, `classiflow`, and `taxomind` to be
 cloned side by side. If they are not, local builds will fail.
 
 1. Clone all three repos side by side:
    ```bash
-   mkdir -p classifai-workspace
-   cd classifai-workspace
-   git clone https://github.com/rowsquared/classifai-platform.git
+   mkdir -p classiflow-workspace
+   cd classiflow-workspace
+   git clone https://github.com/rowsquared/classiflow-platform.git
    git clone https://github.com/rowsquared/classifAI.git
    git clone https://github.com/rowsquared/taxomind.git
    ```
 2. Enter the platform repo:
    ```bash
-   cd classifai-platform
+   cd classiflow-platform
    ```
 3. Create your local env file:
    ```bash
    cp examples/.env.example .env
    ```
-4. Start classifAI (default, no AI):
+4. Start classiflow (default, no AI):
    ```bash
    docker compose -f dev/docker-compose.yml up -d
    ```
-5. Open classifAI:
+5. Open classiflow:
    - http://localhost:3000
 
 ## How to use this platform
 
-- Path A: Run classifAI only (no AI). Use the default compose command (no
+- Path A: Run classiflow only (no AI). Use the default compose command (no
   profile). Leave `AI_LABELING_API_URL` and `AI_LABELING_API_KEY` unset or
-  blank. See the [classifAI README](https://github.com/rowsquared/classifAI#readme).
-- Path B: Run classifAI + taxomind (AI suggestions). Set
+  blank. See the [classiflow README](https://github.com/rowsquared/classifAI#readme).
+- Path B: Run classiflow + taxomind (AI suggestions). Set
   `AI_LABELING_API_URL=http://taxomind:8000` and
   `AI_LABELING_API_KEY=change-me`, then run
   `docker compose -f dev/docker-compose.yml --profile ai up -d`. See the
-  [classifAI README](https://github.com/rowsquared/classifAI#readme) and
+  [classiflow README](https://github.com/rowsquared/classifAI#readme) and
   [taxomind README](https://github.com/rowsquared/taxomind#readme).
 - Path C: Work directly with taxomind (advanced / technical). If you are
   integrating taxomind into another system or developing models, work in the
@@ -124,18 +124,18 @@ cloned side by side. If they are not, local builds will fail.
 
 ## Manual setup (advanced)
 
-- Run classifAI from its repository (UI + API + DB).
+- Run classiflow from its repository (UI + API + DB).
 - Run taxomind from its repository if you want AI suggestions.
-- Point classifAI to taxomind with `AI_LABELING_API_URL` and
+- Point classiflow to taxomind with `AI_LABELING_API_URL` and
   `AI_LABELING_API_KEY`.
 
 ## Configuration overview
 
 - `.env` at the repo root drives `dev/docker-compose.yml`.
-- Common classifAI settings: `NEXTAUTH_SECRET`, `DEFAULT_ADMIN_EMAIL`,
+- Common classiflow settings: `NEXTAUTH_SECRET`, `DEFAULT_ADMIN_EMAIL`,
   `DEFAULT_ADMIN_PASSWORD`.
 - AI integration settings: `AI_LABELING_API_URL`, `AI_LABELING_API_KEY`.
-- For full configuration options, see the classifAI and taxomind docs.
+- For full configuration options, see the classiflow and taxomind docs.
 
 ## Documentation
 
@@ -143,7 +143,7 @@ cloned side by side. If they are not, local builds will fail.
 - `docs/architecture.md` - components, ports, and integration boundaries
 - `docs/local-dev.md` - local dev workflow and troubleshooting
 - `docs/deployment.md` - production patterns and scaling
-- `docs/integration.md` - classifAI to taxomind configuration
+- `docs/integration.md` - classiflow to taxomind configuration
 
 ## Project status and maintenance
 
@@ -164,9 +164,9 @@ maintenance, backward compatibility, or support timelines.
 
 Open an issue in the relevant repository:
 
-- UI/workflows: classifAI repo
+- UI/workflows: classiflow repo
 - AI service: taxomind repo
-- Stack/docs: this repository (classifai-platform)
+- Stack/docs: this repository (classiflow-platform)
 
 ## License
 

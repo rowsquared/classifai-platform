@@ -1,18 +1,18 @@
 # Local development
 
-This repo provides a Docker Compose stack for running classifAI with optional
+This repo provides a Docker Compose stack for running classiflow with optional
 AI suggestions via taxomind.
 
 > Important  
 > Docker images are not published. Docker Compose builds images locally from the
-> classifAI and taxomind repositories. This repo does not replace the upstream
-> docs; use the classifAI and taxomind READMEs for full setup and configuration.
+> classiflow and taxomind repositories. This repo does not replace the upstream
+> docs; use the classiflow and taxomind READMEs for full setup and configuration.
 
 ## Prerequisites
 
 - Docker + Docker Compose
 - Git
-- `classifai-platform`, `classifAI`, and `taxomind` cloned side by side
+- `classiflow-platform`, `classiflow`, and `taxomind` cloned side by side
 
 If any of the prerequisites are missing, stop and install or clone them first.
 
@@ -20,9 +20,9 @@ Expected layout:
 
 ```text
 parent/
-  classifai-platform/
+  classiflow-platform/
     dev/docker-compose.yml
-  classifAI/
+  classiflow/
   taxomind/
 ```
 
@@ -34,11 +34,11 @@ If the layout differs, local builds will fail.
    ```bash
    cp examples/.env.example .env
    ```
-2. Start classifAI (default, no AI):
+2. Start classiflow (default, no AI):
    ```bash
    docker compose -f dev/docker-compose.yml up -d
    ```
-3. Open classifAI:
+3. Open classiflow:
    - http://localhost:3000
 
 To enable AI suggestions:
@@ -55,10 +55,10 @@ docker compose -f dev/docker-compose.yml down
 
 ## Manual run (advanced)
 
-- Run classifAI from its repository (UI + API + DB).
+- Run classiflow from its repository (UI + API + DB).
 - Run taxomind from its repository if you want AI suggestions.
-- Set `AI_LABELING_API_URL` and `AI_LABELING_API_KEY` in classifAI.
-- Ensure classifAI can reach the taxomind base URL.
+- Set `AI_LABELING_API_URL` and `AI_LABELING_API_KEY` in classiflow.
+- Ensure classiflow can reach the taxomind base URL.
 
 ## Configuration locations
 
@@ -78,6 +78,6 @@ docker compose -f dev/docker-compose.yml down
 
 ## Support routing
 
-- UI/workflows issues: classifAI repo
+- UI/workflows issues: classiflow repo
 - AI service issues: taxomind repo
-- Stack/docs issues: classifai-platform repo
+- Stack/docs issues: classiflow-platform repo
