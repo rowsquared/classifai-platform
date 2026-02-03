@@ -71,43 +71,56 @@ so teams review every prediction and teach the model over time.
 
 ## Quickstart (Docker Compose)
 
-> Note  
-> Docker images are **not published** for this project. The provided
-> `docker-compose.yml` builds images locally from source.  
-> See `docs/local-dev.md` for details.
+Docker images are **not published** for this project. The provided
+`dev/docker-compose.yml` builds images locally from source. If Docker or Git
+are missing, install them first.
 
-1. Clone and enter the repo:
+### Prerequisites
+
+- Docker + Docker Compose
+- Git
+
+The compose file expects `classifai-platform`, `classifAI`, and `taxomind` to be
+cloned side by side. If they are not, local builds will fail.
+
+1. Clone all three repos side by side:
    ```bash
+   mkdir -p classifai-workspace
+   cd classifai-workspace
    git clone https://github.com/rowsquared/classifai-platform.git
+   git clone https://github.com/rowsquared/classifAI.git
+   git clone https://github.com/rowsquared/taxomind.git
+   ```
+2. Enter the platform repo:
+   ```bash
    cd classifai-platform
    ```
-2. Create your local env file:
+3. Create your local env file:
    ```bash
    cp examples/.env.example .env
    ```
-3. Start classifAI (default, no AI):
+4. Start classifAI (default, no AI):
    ```bash
    docker compose -f dev/docker-compose.yml up -d
    ```
-4. Open classifAI:
+5. Open classifAI:
    - http://localhost:3000
 
-## Run without AI
+## How to use this platform
 
-- Use the default compose command (no profile).
-- Leave taxomind stopped; classifAI still works in human-only mode.
-- If you see AI connection errors, remove or blank `AI_LABELING_API_URL` and
-  `AI_LABELING_API_KEY` in `.env`.
-
-## Enable AI suggestions
-
-1. Ensure the integration values are set in `.env`:
-   - `AI_LABELING_API_URL=http://taxomind:8000`
-   - `AI_LABELING_API_KEY=change-me`
-2. Start with the AI profile:
-   ```bash
-   docker compose -f dev/docker-compose.yml --profile ai up -d
-   ```
+- Path A: Run classifAI only (no AI). Use the default compose command (no
+  profile). Leave `AI_LABELING_API_URL` and `AI_LABELING_API_KEY` unset or
+  blank. See the [classifAI README](https://github.com/rowsquared/classifAI#readme).
+- Path B: Run classifAI + taxomind (AI suggestions). Set
+  `AI_LABELING_API_URL=http://taxomind:8000` and
+  `AI_LABELING_API_KEY=change-me`, then run
+  `docker compose -f dev/docker-compose.yml --profile ai up -d`. See the
+  [classifAI README](https://github.com/rowsquared/classifAI#readme) and
+  [taxomind README](https://github.com/rowsquared/taxomind#readme).
+- Path C: Work directly with taxomind (advanced / technical). If you are
+  integrating taxomind into another system or developing models, work in the
+  taxomind repo directly. See the
+  [taxomind README](https://github.com/rowsquared/taxomind#readme).
 
 ## Manual setup (advanced)
 
@@ -126,6 +139,7 @@ so teams review every prediction and teach the model over time.
 
 ## Documentation
 
+- `docs/usage.md` - responsibilities and interaction overview
 - `docs/architecture.md` - components, ports, and integration boundaries
 - `docs/local-dev.md` - local dev workflow and troubleshooting
 - `docs/deployment.md` - production patterns and scaling

@@ -1,9 +1,9 @@
 services:
   classifai:
-    image: ${CLASSIFAI_IMAGE:-ghcr.io/rowsquared/classifai:latest}
-    # To use a local build instead of a published image, uncomment:
-    # build:
-    #   context: ../path-to-classifai
+    build:
+      context: ../../classifAI
+    # Optional: use a prebuilt image instead of a local build.
+    # image: your-registry/classifai:tag
     env_file:
       - ../.env
     ports:
@@ -12,12 +12,12 @@ services:
       - db
 
   taxomind:
-    image: ${TAXOMIND_IMAGE:-ghcr.io/rowsquared/taxomind:latest}
+    build:
+      context: ../../taxomind
     profiles:
       - ai
-    # To use a local build instead of a published image, uncomment:
-    # build:
-    #   context: ../path-to-taxomind
+    # Optional: use a prebuilt image instead of a local build.
+    # image: your-registry/taxomind:tag
     env_file:
       - ../.env
     ports:
